@@ -16,6 +16,17 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+//ADDITIONAL CONFIGURATION FROM TUTORIALL
+app.use(express.json())
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers');
+  next();
+});
+
+
+
 // //creates an endpoint for the route `/`
 app.get("/", (req, res) => {
     res.json("Hello Techtonica 2023 H2 to your Server for Eventonica");
@@ -35,6 +46,12 @@ app.get('/api/events', async (req, res) =>{
         return res.status(400).json({error});
 
     }
+
+    
+
+
+
+
 
     //hardcode the events response for testing reasons. This call has one more event that the real DB 
     // try{
