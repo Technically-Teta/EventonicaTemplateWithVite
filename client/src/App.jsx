@@ -2,7 +2,7 @@ import './App.css';
 import Events from './components/events';
 import React, {useState, useEffect} from 'react';
 import Eventsheader from './components/Eventsheader';
-
+import ModEvents from './components/ModEvents';
 
 function App() {
 
