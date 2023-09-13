@@ -59,11 +59,11 @@ function deleteEvents() {
 
   return (
     <div className="App">
-      <Eventsheader eventname = {'Supreme Events'} />
+      <Eventsheader eventname = {' Brought to you from Supreme Events...'} />
     <h1>Techtonica 2023 H2 events</h1>
 
     {events? <Events events={events} /> : <h2>Loading...</h2>}
-    <button className='btn' onClick={createEvent}>Create Event</button>
+    <button className='btn' onClick={createEvent}>Add New Event</button>
     <br />
     <button  className='btn' onClick={deleteEvents}>Delete Event</button>
   

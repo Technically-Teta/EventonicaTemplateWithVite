@@ -1,9 +1,9 @@
-const Eventsheader = () => {
+const Eventsheader = ({eventname}) => {
 
     return(
     
-        <div>
-    
+        <div className="events-header">
+            {eventname}
     
         </div>
     )

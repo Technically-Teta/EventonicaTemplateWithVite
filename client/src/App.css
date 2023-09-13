@@ -1,8 +1,21 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: aliceblue;
+  display: flex;
+}
+
+
+
+
+
 .App {
   display: grid;
   align-items: center;
   justify-content: center;
   margin-top: 50px;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .Events {
@@ -19,11 +32,12 @@ form{
 }
 
 .btn{
-color: #6312e4;
+color: #e1dee5;
 width: 150px ;
 background-color: rgb(213, 32, 207);
-border: 3px saddlebrown;
+border: 6px rgb(7, 6, 6);
 margin-top: 50px;
-margin-bottom: -50px;
-margin-left: 300px;
+margin-bottom: -60px;
+margin-left: 900px;
+border-radius: 12px;
 }
