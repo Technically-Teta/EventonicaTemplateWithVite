@@ -11,6 +11,19 @@ function DeleteEvent() {
         getRequest();
       });
   }
+
+    const DeleteEvent = () => {
+
+      return (
+        <div>
+          <button onClick={DeleteEvent}>Delete Event</button>
+        </div>
+      );
+
+
+      
+    };
+  
   
 
     export default DeleteEvent 
