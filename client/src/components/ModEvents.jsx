@@ -14,6 +14,10 @@ const ModEvents = (event) => {
             <p>
                 {event.title}
             </p>
+            <div className="button-container">
+                <button> Edit Event</button>
+
+            </div>
     
         </div>
     )

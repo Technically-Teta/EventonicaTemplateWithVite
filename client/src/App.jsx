@@ -20,32 +20,25 @@ function App() {
 
     useEffect(() => {getRequest()}, []);
 
-    //ADD A SORT FUNCTION TO SORT BY DATE 
-
+    fetch("http://localhost:8080/api/events", { 
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({title, location, eventdescription, eventtime ,category}),
+      })
+      .then(response => {
+        return response.text();
+      })
     
+      .then(events => {
+        alert(events);
+        getRequest();
+      });
+  }
 
 
-function createEvent(){
-  let title = prompt("What is the title of the event?");
-  let eventdescription = prompt("What is the description of the event?");
-  let eventtime  = prompt("What is the date of the event?");
-  let category = prompt("type the category of the event?");
-  fetch("http://localhost:8080/api/events", { 
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({title, location, eventdescription, eventtime ,category}),
-    })
-    .then(response => {
-      return response.text();
-    })
-  
-    .then(events => {
-      alert(events);
-      getRequest();
-    });
-}
+
 function deleteEvents() {
   let id = prompt('Enter event id');
   fetch(`http://localhost:8080/api/events/${id}`, {
