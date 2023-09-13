@@ -2,7 +2,7 @@ import './App.css';
 import Events from './components/events';
 import React, {useState, useEffect} from 'react';
 import Eventsheader from './components/Eventsheader';
-import ModEvents from './components/ModEvents';
+
 
 function App() {
 
@@ -25,7 +25,7 @@ function App() {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({title, location, eventdescription, eventtime ,category}),
+    body: JSON.stringify({id,title, location, eventdescription, eventtime ,category}),
       })
       .then(response => {
         return response.text();
@@ -35,26 +35,10 @@ function App() {
         alert(events);
         getRequest();
       });
-  }
+  
 
 
 
-function deleteEvents() {
-  let id = prompt('Enter event id');
-  fetch(`http://localhost:8080/api/events/${id}`, {
-    method: 'DELETE',
-  })
-    .then(response => {
-      return response.text();
-    })
-    .then(events => {
-      alert(events);
-      getRequest();
-    });
-}
-
-
-    const sortedEvents = events ?.sort((a, b) => new Date(b.eventtime) - new Date(a.eventtime));
 
   return (
     <div className="App">
@@ -65,11 +49,12 @@ function deleteEvents() {
     <button className='btn' onClick={createEvent}>Add New Event</button>
     <br />
     <button  className='btn' onClick={deleteEvents}>Delete Event</button>
-  
+     <TickIcon />
   </div>
 
   );
   
-  };
+  
+};
 
 export default App

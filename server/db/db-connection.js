@@ -18,7 +18,7 @@ const getEvents = () => {
 }
 const createEvents = (body) => {
   return new Promise(function(resolve, reject) {
-    const { title, location, eventtime, eventdescription,category } = body
+    const { id,title, location, eventtime, eventdescription,category } = body
     pool.query('INSERT INTO events (title, location, date, eventdescription,category) VALUES ($1, $2 , $3 ,$4 ,$5) RETURNING *', [title,date, location, eventdescription, category], (error, events) => {
       if (error) {
         reject(error)

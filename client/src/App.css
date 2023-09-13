@@ -7,8 +7,6 @@ body{
 
 
 
-
-
 .App {
   display: grid;
   align-items: center;
@@ -41,6 +39,16 @@ margin-bottom: -60px;
 margin-left: 900px;
 border-radius: 12px;
 }
+
+.button-container{
+display: flex;
+
+}
+
+.icon{
+  fill: #e21266;
+}
+
 
 .modevents {
   width: 100%;
