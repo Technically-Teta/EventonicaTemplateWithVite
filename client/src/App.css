@@ -6,7 +6,7 @@
 }
 
 .Events {
-  box-shadow: 1px, gray;
+  box-shadow: 1px, rgb(177, 16, 16);
 }
 
 h1 {
@@ -16,4 +16,14 @@ h1 {
 
 form{
   margin-top: 50px;
+}
+
+.btn{
+color: #6312e4;
+width: 150px ;
+background-color: rgb(213, 32, 207);
+border: 3px saddlebrown;
+margin-top: 50px;
+margin-bottom: -50px;
+margin-left: 300px;
 }
