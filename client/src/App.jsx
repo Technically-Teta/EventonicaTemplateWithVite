@@ -3,8 +3,11 @@ import Events from './components/events';
 import React, {useState, useEffect} from 'react';
 import Eventsheader from './components/Eventsheader';
 import ModEvents from './components/ModEvents';
+import CreateEvents from './components/CreateEvent';
+import DeleteEvent from './components/DeleteEvent';
 
 function App() {
+
 
   const [events, setEvents] = useState(false);
   
@@ -46,9 +49,9 @@ function App() {
     <h1>Techtonica 2023 H2 events</h1>
      {sortedEvents?.map((event)=>  <ModEvents key={event.id} event={event}  />)}
     {events? <Events events={events}   /> : <h2>Loading...</h2>}
-    <button className='btn' onClick={createEvent}>Add New Event</button>
+    <button className='btn' onClick={CreateEvents}>Add New Event</button>
     <br />
-    <button  className='btn' onClick={deleteEvents}>Delete Event</button>
+    <button  className='btn' onClick={DeleteEvent}>Delete Event</button>
      <TickIcon />
   </div>
 

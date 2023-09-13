@@ -10,19 +10,25 @@ function DeleteEvent() {
         alert(events);
         getRequest();
       });
-  }
+ 
 
-    const DeleteEvent = () => {
+     
 
       return (
+
+        <div className="delete-item">
+
+        
         <div>
-          <button onClick={DeleteEvent}>Delete Event</button>
+          <button className="btn" onClick={DeleteEvent}>Delete Event</button>
         </div>
+
+      </div>
       );
 
-
-      
     };
+      
+    
   
   
 
