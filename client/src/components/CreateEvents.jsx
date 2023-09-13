@@ -28,6 +28,8 @@ const [events, setEvents] = useState({
     
         <div className="create-event">
             <div className="create-form">
+                <h3>Create Event here!</h3>
+                <button onClick={()=>setCreateEvent(false)}>X</button>
                 <form>
                     <input type="submit" className="input-title"
                         required

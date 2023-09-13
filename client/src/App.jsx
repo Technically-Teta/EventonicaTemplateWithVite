@@ -5,7 +5,9 @@ import Eventsheader from './components/Eventsheader';
 import ModEvents from './components/ModEvents';
 import CreateEvents from './components/CreateEvents';
 import DeleteEvent from './components/DeleteEvent';
+import FormEvent from './components/form';
 
+// if create event is clicked, it will redirect to the create event page, SET UP CORRECTLY? DO THE SAME FOR EDIT AND DELETE?
 function App() {
 
 
@@ -54,7 +56,8 @@ function App() {
     <br />
     <button  className='btn' onClick={DeleteEvent}>Delete Event</button>
      <TickIcon />
-     <CreateEvents setCreateEvent={setCreateEvent} />
+     {CreateEvents &&<CreateEvents setCreateEvent={setCreateEvent} />}
+     <FormEvent/>
   </div>
 
   );
