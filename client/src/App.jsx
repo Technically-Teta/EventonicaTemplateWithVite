@@ -2,6 +2,7 @@ import './App.css';
 import Events from './components/events';
 import React, {useState, useEffect} from 'react';
 import Eventsheader from './components/Eventsheader';
+import ModEvents from './components/ModEvents';
 
 function App() {
 
@@ -19,8 +20,7 @@ function App() {
 
     useEffect(() => {getRequest()}, []);
 
-    //sort by date to be modified later
-    const sortedEvents = events.sort((a, b) => new Date(a.date) - new Date(b.date));
+    //ADD A SORT FUNCTION TO SORT BY DATE 
 
     
 
@@ -61,14 +61,14 @@ function deleteEvents() {
 }
 
 
-
+    const sortedEvents = events ?.sort((a, b) => new Date(b.eventtime) - new Date(a.eventtime));
 
   return (
     <div className="App">
       <Eventsheader eventname = {' Brought to you from Supreme Events...'} />
     <h1>Techtonica 2023 H2 events</h1>
-
-    {events? <Events events={sortedEvents}   /> : <h2>Loading...</h2>}
+     {sortedEvents?.map((event)=>  <ModEvents key={event.id} event={event}  />)}
+    {events? <Events events={events}   /> : <h2>Loading...</h2>}
     <button className='btn' onClick={createEvent}>Add New Event</button>
     <br />
     <button  className='btn' onClick={deleteEvents}>Delete Event</button>

@@ -41,3 +41,11 @@ margin-bottom: -60px;
 margin-left: 900px;
 border-radius: 12px;
 }
+
+.modevents {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: #00556e;
+  display: flex;
+  justify-content: space-between;
+}
