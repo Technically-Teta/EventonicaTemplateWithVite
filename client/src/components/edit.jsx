@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 
 function EditUserForm(props){
 //initalizes state to store user data
@@ -30,7 +30,7 @@ return (
     <label htmlFor="location">location: </label>
     <input type="text" id="name" name="title" value={user.name} onChange={handleInputChange}/>
     </div>
-    <button type="submit">Submit</button>
+    <button type="submit">Edit</button>
 </form>    
 
 )
@@ -40,3 +40,4 @@ return (
 }
 
 
+export default EditUserForm;
