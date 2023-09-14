@@ -27,7 +27,7 @@ app.get('/api/events', async (req, res) =>{
     //real connection with the DB eventonica
     try{
         const { rows: events } = await db.query('SELECT * FROM events');
-        console.log("in the server", events);
+        console.log("In the server", events)
         res.send(events);
 
     } catch(error){
@@ -36,30 +36,50 @@ app.get('/api/events', async (req, res) =>{
 
     }
 
-
-    
 })
 
-app.post('/api/events', async (req, res) => {
-    // const userData = req.body;
-    // console.log("from the server line 43", userData);
-    // post requets shouuld have a try catch
+app.post('/api/events', async (req, res) =>{
+    /*
+    INSERT INTO events (title, location, eventtime) VALUES ('Women in Tech Techtonica Panel', 'Overland Park Convention Center', '2023-04-21');
+    */
+
+    try {
+        // const userData = req.body;
+        // console.log("In the server", userData);
+        const { title, location, eventtime } = req.body;
+        // syntax = await db.query("", [])
+        const result = await db.query(
+        "INSERT INTO events (title, location, eventtime) VALUES ($1, $2, $3) RETURNING *",
+            [title, location, eventtime]
+        );
+        let dbResponse = result.rows[0];
+        console.log(dbResponse)
+        res.json(dbResponse);
+    } catch(error){
+        console.log(error);
+        res.status(400).json({error});
+    }
+})
+
+//DELETE FROM events WHERE id=5;
+app.delete('/api/events/:id', async (req, res) =>{
+    //TODO - make this delete request work
     try{
-        const {title, location, eventtime, eventdescription, category}  = req.body;
-        //suntax for the db query =await db.query ("".[]) which is a function that takes two parameters, the quesry and the array of values
-        const { rows: events } = await db.query('INSERT INTO events (title, location, eventtime, eventdescription, category) VALUES ($1,$2,$3,$4,$5)',
-    // in an array you are adding each one of the values in the array
-        [title, location, eventtime, eventdescription, category]
-    
+    const eventId = req.params.id;
+    const deleteOperation = await db.query("DELETE FROM events WHERE id=$1", [eventId]);
+    console.log(deleteOperation);
+    res.status(200).end()
 
-);    
-        console.log("in the server", rows[0]);
-       res.send(rows[0]);
-}  catch (error) {
-     console.log(error);
-     res.status(400).json({error});
-
-}
+    } catch(error){
+        console.log(error);
+        res.status(400).json({error});
+    }
 })
+
+//UPDATING something in the DB
+// app.put('/api/events/:id', async (req, res) =>{
+
+// })
+
 
 app.listen(PORT, () => console.log(`Hola! Server running on Port http://localhost:${PORT}`));
