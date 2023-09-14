@@ -36,25 +36,31 @@ app.get('/api/events', async (req, res) =>{
 
     }
 
-    //hardcode the events response for testing reasons. This call has one more event that the real DB 
-    // try{
-    //     const events = [
 
-    //         {id: 1, title: 'Women in Tech Techtonica Panel', location: 'Overland Park Convention Center'},
-    //         {id: 2, title: 'Japanese Cultural Education', location: 'Seattle Convention Center'},
-    //         {id: 3, title: "Haven 90's Party Night Club", location: 'Hilton Hotel Kansas City'},
-    //         {id: 4, title: 'Comedy Night at the Station', location: 'SF Hilton Hotel'},
-    //         {id: 5, title: 'A Decadent Arts Experience', location: 'West Ridge Mall'},
-    //         {id: 6, title: 'Techtonica Classroom Course', location: 'Techtonica HQ'}
-    //       ];
-    //     res.json(events);
-
-    // } catch(error){
-    //     console.log(error);
-    // }   
     
 })
 
+app.post('/api/events', async (req, res) => {
+    // const userData = req.body;
+    // console.log("from the server line 43", userData);
 
+    // post requets shouuld have a try catch
+    try{
+        const {title, location, eventtime, eventdescription, category}  = req.body;
+        //suntax for the db query =await db.query ("".[])
+        const { rows: events } = await db.query('INSERT INTO events (title, location, eventtime, eventdescription, category) VALUES ($1,$2,$3,$4,$5)',
+    // in an array you are adding each one of the values in the array
+        [title, location, eventtime, eventdescription, category]
+    
+
+);    
+        console.log("in the server", rows[0]);
+       res.send(rows[0]);
+}  catch (error) {
+     console.log(error);
+     res.status(400).json({error});
+
+}
+})
 
 app.listen(PORT, () => console.log(`Hola! Server running on Port http://localhost:${PORT}`));
