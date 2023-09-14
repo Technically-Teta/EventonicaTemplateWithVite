@@ -37,6 +37,7 @@ const EventCard = (props) => {
                 <Card.Subtitle className="mb-2 text-muted">Date: {!props.event.eventtime ? "TBD" :moment(props.event.eventtime).format('MMMM Do, YYYY')}</Card.Subtitle>
                 <Card.Text>
                     Location: {props.event.location}
+                    ID: {props.event.id}
                 </Card.Text>
                 <button onClick={handleDelete}>Delete</button>
                 <button>Edit</button>

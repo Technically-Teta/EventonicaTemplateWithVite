@@ -24,32 +24,32 @@ function EditUserDataForm(props) {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="eventtime">Date:</label>
         <input
           type="text"
-          id="name"
+          id="id"
           name="name"
-          value={userData.name}
+          value={userData.eventtime}
           onChange={handleInputChange}
         />
       </div>
       <div>
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="eventtime">Event Description:</label>
         <input
-          type="email"
-          id="email"
-          name="email"
-          value={userData.email}
+          type="description"
+          id="id"
+          name="name"
+          value={userData.eventdescription}
           onChange={handleInputChange}
         />
       </div>
       <div>
-        <label htmlFor="age">Age:</label>
+        <label htmlFor="age">Category:</label>
         <input
           type="number"
           id="age"
           name="age"
-          value={userData.age}
+          value={userData.category}
           onChange={handleInputChange}
         />
       </div>

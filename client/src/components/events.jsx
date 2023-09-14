@@ -39,8 +39,13 @@ const handleDeleteRequest = (id) => {
       getRequest()
     }
   })
-}
-  
+  .then((response) => {
+    if(!response.ok) {
+      throw new Error('Something went wrong')
+    }
+    console.log("Deleted")
+})
+ 
   useEffect(() => {getRequest()}, []);
 
   return (
@@ -58,5 +63,5 @@ const handleDeleteRequest = (id) => {
     </>
   );
 }
-
+}
 export default Events;

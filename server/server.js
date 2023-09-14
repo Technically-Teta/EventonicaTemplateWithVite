@@ -63,6 +63,7 @@ app.post('/api/events', async (req, res) =>{
 
 //DELETE FROM events WHERE id=5;
 app.delete('/api/events/:id', async (req, res) =>{
+    
     //TODO - make this delete request work
     try{
     const eventId = req.params.id;
