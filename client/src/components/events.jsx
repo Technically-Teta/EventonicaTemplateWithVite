@@ -44,13 +44,18 @@ const handleDeleteRequest = (id) => {
   useEffect(() => {getRequest()}, []);
 
   return (
+    <>
     <div>
     <CardGroup className="Events">
             {events.map(event =>
-            <EventCard key={event.id} title={event.title} location={event.location} time={event.eventtime} eventdescription={event.eventdescription} category ={event.category}/>
+            <EventCard key={event.id} event={event} onDelete={handleDeleteRequest}/>
             )}
     </CardGroup>
     </div>
+    <div>
+        <FormEvent  submit={handlePostRequest}/>
+    </div>
+    </>
   );
 }
 

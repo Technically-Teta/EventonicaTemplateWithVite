@@ -1,5 +1,5 @@
 import Card from 'react-bootstrap/Card';
-//import { confirmAlert } from 'react-confirm-alert'; // Import
+//import { confirmAlert } from 'react-confirm-alert'; 
 //import 'react-confirm-alert/src/react-confirm-alert.css'; 
 import moment from 'moment';
 
