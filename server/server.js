@@ -43,11 +43,10 @@ app.get('/api/events', async (req, res) =>{
 app.post('/api/events', async (req, res) => {
     // const userData = req.body;
     // console.log("from the server line 43", userData);
-
     // post requets shouuld have a try catch
     try{
         const {title, location, eventtime, eventdescription, category}  = req.body;
-        //suntax for the db query =await db.query ("".[])
+        //suntax for the db query =await db.query ("".[]) which is a function that takes two parameters, the quesry and the array of values
         const { rows: events } = await db.query('INSERT INTO events (title, location, eventtime, eventdescription, category) VALUES ($1,$2,$3,$4,$5)',
     // in an array you are adding each one of the values in the array
         [title, location, eventtime, eventdescription, category]
