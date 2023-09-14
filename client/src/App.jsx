@@ -1,6 +1,6 @@
 import './App.css';
 import Events from './components/events';
-import EditUserForm from './components/edit';
+import EditUserDataForm from './components/edit';
 import { useState,useEffect } from 'react';
 
 function App() {
@@ -31,7 +31,7 @@ console.log("this is the updated edit",event);
     <h1>Techtonica 2023 H2 events</h1>
   <Events />
     <div className='edit-form'>   
-  <EditUserForm editUse={editUse} onSubmit={handleEdit}  />
+  <EditUserDataForm editUse={editUse} onSubmit={handleEdit}  />
 
    </div>
 
