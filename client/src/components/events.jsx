@@ -57,20 +57,8 @@ const handleUpdateRequest = (id, data) => {
     if(response.status === 200) {
       getRequest()
     }
-  })
-  .then((response) => {
-  if(!response.ok) {
-  throw new Error('Something went wrong')
-   }
    console.log("Updated")
 })
-
-
-
-
-
-
-
 
 
 }
@@ -87,10 +75,7 @@ const handleUpdateRequest = (id, data) => {
             
     </CardGroup>
     </div>
-      <CardGroup className="Events">
-          <EditUserDataForm onSubmit={handleUpdateRequest} />
-        
-      </CardGroup>
+      
     <div>
         <FormEvent  submit={handlePostRequest}/>
     </div>
