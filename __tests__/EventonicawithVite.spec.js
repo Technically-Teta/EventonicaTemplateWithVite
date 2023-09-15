@@ -12,6 +12,8 @@ describe("filter function", () => {
             {"fetch": "http://localhost:8080/api/events"},
             {"fetch": "http://localhost:8080/api/events/${id}"},
         ]
+        const result = fetchingcheck(fetchingcheckInput);
+        expect(result).toBe(fetchingcheckInput);
     })
 
 });
