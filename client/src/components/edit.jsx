@@ -24,6 +24,28 @@ function EditUserDataForm(props) {
   return (
     <form onSubmit={handleSubmit}>
       <div>
+        <label htmlFor="Title">Title:</label>
+        <input
+          type="text"
+          id="id"
+          name="name"
+          value={userData.title}
+          onChange={handleInputChange}
+        />
+      </div>
+       
+      <div>
+        <label htmlFor="eventtime">Location:</label>
+        <input
+          type="text"
+          id="id"
+          name="name"
+          value={userData.location}
+          onChange={handleInputChange}
+        />
+      </div>
+
+      <div>
         <label htmlFor="eventtime">Date:</label>
         <input
           type="text"

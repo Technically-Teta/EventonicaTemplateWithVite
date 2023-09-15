@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import EventCard from "./event";
 import FormEvent from './form';
 import CardGroup from 'react-bootstrap/CardGroup';
+import EditUserDataForm from "./edit";
 
 
 function Events() {
@@ -45,6 +46,7 @@ const handleDeleteRequest = (id) => {
   //   }
   //   console.log("Deleted")
 })
+}
 
 const handleUpdateRequest = (id, data) => {
   fetch(`http://localhost:8080/api/events/${id}`, {
@@ -85,6 +87,10 @@ const handleUpdateRequest = (id, data) => {
             
     </CardGroup>
     </div>
+      <CardGroup className="Events">
+          <EditUserDataForm onSubmit={handleUpdateRequest} />
+        
+      </CardGroup>
     <div>
         <FormEvent  submit={handlePostRequest}/>
     </div>
