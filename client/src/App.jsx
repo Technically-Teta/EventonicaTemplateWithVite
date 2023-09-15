@@ -1,11 +1,11 @@
 import './App.css';
 import Events from './components/events';
-import EditUserDataForm from './components/edit';
+
 import { useState,useEffect } from 'react';
 
 
 function App() {
-  const [editUse, setEditUse] = useState(false);
+  // const [editUse, setEditUse] = useState(false);
   // const [editUse, setEditUse] = useState({
   // title: ' ',
   // location: ' ',
@@ -23,20 +23,18 @@ function App() {
      });
     }, []);
 
-const handleEdit = (event) => {
-console.log("this is the updated edit",event);
-}
+// const handleEdit = (event) => {
+// console.log("this is the updated edit",event);
+// }
 
   return (
     <div className="App">
-    <h1>Techtonica 2023 H2 events</h1>
+    <h1>Supreme 2023 H2 events</h1>
   <Events />
-    <div className='edit-form'>   
-  <EditUserDataForm editUse={editUse} onSubmit={handleEdit}  />
-  
+ 
    </div>
 
-    </div>
+    
 
   )
   

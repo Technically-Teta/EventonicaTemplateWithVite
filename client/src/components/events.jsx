@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import EventCard from "./event";
 import FormEvent from './form';
 import CardGroup from 'react-bootstrap/CardGroup';
-import EditUserDataForm from "./edit";
+
 
 
 function Events() {
@@ -74,6 +74,15 @@ const handleUpdateRequest = (id, data) => {
             )}
             
     </CardGroup>
+    </div>
+    <div>
+    <CardGroup className="Events">
+            {events.map(event =>
+            <EventCard key={event.id} event={event} onSubmit={handleUpdateRequest} />
+            )}
+            
+    </CardGroup>
+
     </div>
       
     <div>
