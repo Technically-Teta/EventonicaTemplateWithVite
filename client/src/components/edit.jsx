@@ -58,7 +58,7 @@ function EditUserDataForm(props) {
       <div>
         <label htmlFor="eventtime">Event Description:</label>
         <input
-          type="description"
+          type="text"
           id="id"
           name="name"
           value={userData.eventdescription}
@@ -68,9 +68,9 @@ function EditUserDataForm(props) {
       <div>
         <label htmlFor="age">Category:</label>
         <input
-          type="number"
-          id="age"
-          name="age"
+          type="text"
+          id="id"
+          name="name"
           value={userData.category}
           onChange={handleInputChange}
         />
