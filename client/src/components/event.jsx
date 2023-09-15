@@ -11,13 +11,13 @@ const EventCard = (props) => {
 
 
 //giving me a blank state for the event card
-const blankStartState = {
-    id: '',
-    title: '',
-    description: '',
-    category: '',
-    location: '',
-}
+// const blankStartState = {
+//     id: '',
+//     title: '',
+//     description: '',
+//     category: '',
+//     location: '',
+// }
  
 //function to return the info that I want to display
 function initState() {
@@ -59,7 +59,7 @@ const reducer = (state, action) => {
 
 };
 // Implment the userReducer to help me with the state
-const [state, dispatch] = React.useReducer(reducer, initState());
+const [state, dispatch] = useReducer(reducer, initState());
 const [events, setEvents] = useState([]);
 const newEvent = {
     title: state.title,
@@ -69,18 +69,6 @@ const newEvent = {
     location: state.location,
 };
 
-setEvents((events) => [
-    ...events,
-    {
-        id: newEvent.id,
-        title: newEvent.title,
-        description: newEvent.description,
-        category: newEvent.category
-    },
-]);
-dispatch({type: "reset", payload: initState});
-
-// get use efffect here with the function that handled the
 
 
 

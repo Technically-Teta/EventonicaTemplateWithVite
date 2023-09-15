@@ -16,7 +16,7 @@ function App() {
     .then((response) => response.json())
     .then(events => {
       console.log(events);
-      setEditUse(events);
+     // setEditUse(events);
      })
      .catch((error) => {
        console.log(error);
