@@ -6,6 +6,9 @@ const FormEvent = (props) => {
     //const [ event, setEvent ] = useState({title: "", location: "", eventtime: ""})
     const userTitle = useRef();
     const userLocation = useRef();
+    const userEventTime = useRef();
+    const userDescription = useRef();
+    const userCategory = useRef();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,7 +28,16 @@ const FormEvent = (props) => {
             <label>Event Location</label>
             <input type="text" name="location" required placeholder="Where will be your event" ref={userLocation}/>
 
-            <button type="submit">Submit</button>
+            <label>Event Date</label>
+            <input type="text" name="location" required placeholder="When will be your event?" ref={userEventTime}/>            
+            
+            <label>Event Description</label>
+            <input type="text" name="location" required placeholder="Describe your event" ref={userDescription}/>
+            
+            <label>Event Category</label>
+            <input type="text" name="location" required placeholder="What is the category of your event?" ref={userCategory}/>
+
+            <button className="button" type="submit">Submit</button>
         </form>
 
     )

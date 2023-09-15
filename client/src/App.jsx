@@ -1,7 +1,7 @@
 import './App.css';
 import Events from './components/events';
 
-import { useState,useEffect } from 'react';
+import { useEffect } from 'react';
 
 
 function App() {

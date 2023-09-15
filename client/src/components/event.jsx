@@ -2,6 +2,7 @@ import Card from 'react-bootstrap/Card';
 //import { confirmAlert } from 'react-confirm-alert'; // Import
 //import 'react-confirm-alert/src/react-confirm-alert.css'; 
 import moment from 'moment';
+import Icon from './icon';
 
 const EventCard = (props) => {
 
@@ -36,6 +37,7 @@ const EventCard = (props) => {
                 <Card.Title>{props.event.title}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">Date: {!props.event.eventtime ? "TBD" :moment(props.event.eventtime).format('MMMM Do, YYYY')}</Card.Subtitle>
                 <Card.Text>
+                    <Icon/>
                     Location: {props.event.location}
                     <br></br>
                     ID: {props.event.id}
@@ -46,8 +48,8 @@ const EventCard = (props) => {
                     <br></br>
                     Category: {props.event.category}
                 </Card.Text>
-                <button onClick={handleDelete}>Delete</button>
-                <button>Edit</button>
+                <button className='btn' id='hover' onClick={handleDelete}>Delete</button>
+                <button className='btn' id='hover'>Edit</button>
             </Card.Body>
         </Card>
     )
