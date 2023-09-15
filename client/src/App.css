@@ -49,7 +49,7 @@ form{
       background-image: linear-gradient(to right,#3ec7e0,#526bf4);
   }
   
-.iconzz{
+:icon-id{
 color: #e052a0;
 border-color: coral;
 }

@@ -1,4 +1,5 @@
 import Card from 'react-bootstrap/Card';
+import { useState } from 'react';
 //import { confirmAlert } from 'react-confirm-alert'; // Import
 //import 'react-confirm-alert/src/react-confirm-alert.css'; 
 import moment from 'moment';
@@ -21,10 +22,11 @@ const [userData, setUserData] = useState(props);
   const handleSubmit = (event) => {
     event.preventDefault();
     // Call a callback function to handle the updated data
-    props.onSubmit(userData);
+    const userEvent = {title: userTitle.current?.value, location: userLocation?.current.value, eventtime: new Date()}
+    props.submit(userEvent);
   };
-
-
+ 
+  
 
 
 //DELETE EVENT
@@ -73,7 +75,7 @@ const [userData, setUserData] = useState(props);
                 </Card.Text>
                
                 <button className='btn' id='hover' onClick={handleDelete}>Delete</button>
-                <button className='btn' id='hover' onChange={handleInputChange}>Edit</button>
+                <button  className='btn' id='hover' onClick={handleInputChange}>Edit</button>
             </Card.Body>
         </Card>
     )
@@ -81,3 +83,4 @@ const [userData, setUserData] = useState(props);
 }
 
 export default EventCard;
+
