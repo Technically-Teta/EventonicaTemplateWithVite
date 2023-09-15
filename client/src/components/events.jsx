@@ -38,12 +38,12 @@ const handleDeleteRequest = (id) => {
     if(response.status === 200) {
       getRequest()
     }
-  })
-  .then((response) => {
-    if(!response.ok) {
-      throw new Error('Something went wrong')
-    }
-    console.log("Deleted")
+  // })
+  // .then((response) => {
+  //   if(!response.ok) {
+  //     throw new Error('Something went wrong')
+  //   }
+  //   console.log("Deleted")
 })
 }
 
