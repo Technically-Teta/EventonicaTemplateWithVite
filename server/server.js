@@ -63,7 +63,7 @@ app.post('/api/events', async (req, res) =>{
 
 //DELETE FROM events WHERE id=5;
 app.delete('/api/events/:id', async (req, res) =>{
-    
+
     //TODO - make this delete request work
     try{
     const eventId = req.params.id;
@@ -78,9 +78,31 @@ app.delete('/api/events/:id', async (req, res) =>{
 })
 
 //UPDATING something in the DB
-// app.put('/api/events/:id', async (req, res) =>{
+app.put('/api/events/:id', async (req, res) =>{
+  try{
+    const eventId = req.params.id;
+    const { title, location, eventtime , eventdescription, category} = req.body;
+ 
+    // Updates the event in the database
+    const updateOperation = await db.query(
+        "UPDATE events SET title=$1, location=$2, eventtime=$3, eventdescription=$4, category=$5 WHERE id=$6",
+        [title, location, eventtime, eventdescription, category, eventId]
+    );
+    console.log(updateOperation);
 
-// })
+    if(updateOperation.rowCount === 0){
+        return res.status(404).json({ error: 'Event not found' });
+    }
+
+    res.status(200).json({ message: 'Event updated successfully' });
+} catch (error) {
+    console.error(error);
+    res.status(400).json({ error });
+}
+
+
+
+ });
 
 
 app.listen(PORT, () => console.log(`Hola! Server running on Port http://localhost:${PORT}`));
