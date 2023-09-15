@@ -5,30 +5,6 @@ import moment from 'moment';
 import Icon from './icon';
 
 const EventCard = (props) => {
-    onChangeColor = (e) => {
-        const id = e.target.id;
-        this.props.addFavorisAction(id);
-    
-        // Toggle the icon color state
-        this.setState((prevState) => ({
-          iconColor: {
-            ...prevState.iconColor,
-            [id]: prevState.iconColor[id] === 'gx-text-gris' ? 'gx-text-red' : 'gx-text-gris',
-          },
-        }));
-      };
-    
-      render() {
-        const { iconColor } = this.state;
-        const { hit } = this.props;
-    
- 
-
-
-
-
-
-
 
     const handleDelete = () => {
         //localhost:8080/api/events/5
@@ -72,18 +48,13 @@ const EventCard = (props) => {
                     <br></br>
                     Category: {props.event.category}
                 </Card.Text>
-                <i
-                    id={hit.idMedia}
-                      onClick={this.onChangeColor}
-                        className={`icon icon-like-o ${iconColor[hit.idMedia] || 'gx-text-gris'}`}
-               ></i>
-
+               
                 <button className='btn' id='hover' onClick={handleDelete}>Delete</button>
                 <button className='btn' id='hover'>Edit</button>
             </Card.Body>
         </Card>
     )
-    }
+    
 }
 
 export default EventCard;
