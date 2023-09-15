@@ -5,6 +5,29 @@ import moment from 'moment';
 import Icon from './icon';
 
 const EventCard = (props) => {
+const [userData, setUserData] = useState(props);
+
+// EDIT EVENT
+//Function to handle changes in form inputs
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    // Update the corresponding field in userData state
+    setUserData({
+      ...userData,
+      [name]: value,
+    });
+  };
+// Function to handle form submission
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Call a callback function to handle the updated data
+    props.onSubmit(userData);
+  };
+
+
+
+
+//DELETE EVENT
 
     const handleDelete = () => {
         //localhost:8080/api/events/5
@@ -50,7 +73,7 @@ const EventCard = (props) => {
                 </Card.Text>
                
                 <button className='btn' id='hover' onClick={handleDelete}>Delete</button>
-                <button className='btn' id='hover'>Edit</button>
+                <button className='btn' id='hover' onChange={handleInputChange}>Edit</button>
             </Card.Body>
         </Card>
     )
