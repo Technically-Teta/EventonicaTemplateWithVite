@@ -79,8 +79,8 @@ setEvents((events) => [
     },
 ]);
 dispatch({type: "reset", payload: initState});
-};
-// get use efffect here with the function that handled the put?
+
+// get use efffect here with the function that handled the
 
 
 
@@ -133,6 +133,82 @@ dispatch({type: "reset", payload: initState});
                 <button  className='btn' id='hover' onClick={(e)=>handleSubmit(e)}>Edit</button>
             </Card.Body>
         </Card>
+
+     /// DO I NEED A RETURN HERE
+     /// SHOULD THIS BE ABOVE THE CARD INFO.?
+    //     <form onSubmit={handleSubmit}>
+    //       <div>
+    //         <label htmlFor="Title">Titlelist:</label>
+    //         <input
+    //           type="text"
+    //           id="id"
+    //           name="name"
+    //           value={userData.title}
+    //           onChange={handleInputChange}
+                   //dispatch({type: "UPDATE_EVENT_TITLE", payload: event.title})
+    //         />
+    //       </div>
+           
+    //       <div>
+    //         <label htmlFor="eventtime">Location:</label>
+    //         <input
+    //           type="text"
+    //           id="id"
+    //           name="name"
+    //           value={userData.location}
+    //           onChange={handleInputChange}
+                        //dispatch({type: "UPDATE_EVENT_LOCATION", payload: event.location})
+    //         />
+    //       </div>
+    
+    //       <div>
+    //         <label htmlFor="eventtime">Date:</label>
+    //         <input
+    //           type="text"
+    //           id="id"
+    //           name="name"
+    //           value={userData.eventtime}
+    //           onChange={handleInputChange}
+                        //dispatch({type: "UPDATE_EVENT_DATE", payload: event.eventtime})
+    //         />
+    //       </div>
+    //       <div>
+    //         <label htmlFor="eventtime">Event Description:</label>
+    //         <input
+    //           type="text"
+    //           id="id"
+    //           name="name"
+    //           value={userData.eventdescription}
+    //           onChange={handleInputChange}
+                        //dispatch({type: "UPDATE_EVENT_DESCRIPTION", payload: event.eventdescription})
+    //         />
+    //       </div>
+    //       <div>
+    //         <label htmlFor="age">Category:</label>
+    //         <input
+    //           type="text"
+    //           id="id"
+    //           name="name"
+    //           value={userData.category}
+    //           onChange={handleInputChange}
+      //          dispatch({type: "UPDATE_EVENT_CATEGORY", payload: event.category})
+    //         />
+    //       </div>
+    //       <button type="submit">Save Changes</button>
+    //     </form>
+
+
+           
+
+
+
+
+
+
+
+
+
+
     )
     
 }
