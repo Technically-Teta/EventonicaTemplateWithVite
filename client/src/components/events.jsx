@@ -57,7 +57,7 @@ const handleUpdateRequest = (id, data) => {
     if(response.status === 200) {
       getRequest()
     }
-   console.log("Updated")
+   console.log("Event Updated")
 })
 
 

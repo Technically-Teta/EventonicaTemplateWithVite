@@ -1,28 +1,31 @@
 import Card from 'react-bootstrap/Card';
 import { useState } from 'react';
-//import { confirmAlert } from 'react-confirm-alert'; // Import
-//import 'react-confirm-alert/src/react-confirm-alert.css'; 
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
 import moment from 'moment';
 import Icon from './icon';
+import Events from './events';
 
 const EventCard = (props) => {
 const [userData, setUserData] = useState(props);
 
 // EDIT EVENT
 //Function to handle changes in form inputs
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    // Update the corresponding field in userData state
-    setUserData({
-      ...userData,
-      [name]: value,
-    });
-  };
+//   const handleInputChange = (event) => {
+//     const { name, value } = event.target;
+//     // Update the corresponding field in userData state
+//     setUserData({
+//       ...userData,
+//       [name]: value,
+//     });
+//   };
 // Function to handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
     // Call a callback function to handle the updated data
-    const userEvent = {title: userTitle.current?.value, location: userLocation?.current.value, eventtime: new Date()}
+    const userEvent = {id:eventId.current?.value, title: userTitle.current?.value, location: userLocation?.current.value, eventtime: new Date()}
+    console.log("uservent", userEvent)
+    Events.handleUpdateRequest()
     props.submit(userEvent);
   };
  
@@ -75,7 +78,7 @@ const [userData, setUserData] = useState(props);
                 </Card.Text>
                
                 <button className='btn' id='hover' onClick={handleDelete}>Delete</button>
-                <button  className='btn' id='hover' onClick={handleInputChange}>Edit</button>
+                <button  className='btn' id='hover' onClick={(e)=>handleSubmit(e)}>Edit</button>
             </Card.Body>
         </Card>
     )

@@ -4,6 +4,7 @@ import { useRef } from "react";
 const FormEvent = (props) => {
 
     //const [ event, setEvent ] = useState({title: "", location: "", eventtime: ""})
+    const eventId = useRef();
     const userTitle = useRef();
     const userLocation = useRef();
     const userEventTime = useRef();
@@ -12,7 +13,7 @@ const FormEvent = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const userEvent = {title: userTitle.current?.value, location: userLocation?.current.value, eventtime: new Date()}
+        const userEvent = {id:eventId.current?.value, title: userTitle.current?.value, location: userLocation?.current.value, eventtime: new Date()}
         //console.log("Inside the component", userEvent);
         props.submit(userEvent);
        

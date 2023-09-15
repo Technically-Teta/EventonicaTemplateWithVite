@@ -86,20 +86,19 @@ app.put('/api/events/:id', async (req, res) =>{
     const updateOperation = await db.query(
         "UPDATE events SET title=$1, location=$2, eventtime=$3, eventdescription=$4, category=$5 WHERE id=$6",
         [title, location, eventtime, eventdescription, category, eventId]
+
     );
-    console.log(updateOperation);
+   // const results = updateOperation;
+    console.log("this is update operation", updateOperation);
 
     if(updateOperation.rowCount === 0){
         return res.status(404).json({ error: 'Event not found' });
     }
-
     res.status(200).json({ message: 'Event updated successfully' });
 } catch (error) {
     console.error(error);
     res.status(400).json({ error });
 }
-
-
 
  });
 
