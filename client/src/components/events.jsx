@@ -56,7 +56,7 @@ const handleDeleteRequest = (id) => {
             {events.map(event =>
             <EventCard key={event.id} event={event} onDelete={handleDeleteRequest} />
             )}
-             <button onClick={() => handleDeleteRequest({})}>delete</button>
+            
     </CardGroup>
     </div>
     <div>

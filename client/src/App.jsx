@@ -3,6 +3,7 @@ import Events from './components/events';
 import EditUserDataForm from './components/edit';
 import { useState,useEffect } from 'react';
 
+
 function App() {
   const [editUse, setEditUse] = useState(false);
   // const [editUse, setEditUse] = useState({
@@ -32,7 +33,7 @@ console.log("this is the updated edit",event);
   <Events />
     <div className='edit-form'>   
   <EditUserDataForm editUse={editUse} onSubmit={handleEdit}  />
-
+  
    </div>
 
     </div>

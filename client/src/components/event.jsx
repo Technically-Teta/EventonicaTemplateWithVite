@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card';
-//import { confirmAlert } from 'react-confirm-alert'; // Import
-//import 'react-confirm-alert/src/react-confirm-alert.css'; 
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
 import moment from 'moment';
 
 const EventCard = (props) => {
