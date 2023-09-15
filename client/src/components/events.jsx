@@ -45,6 +45,32 @@ const handleDeleteRequest = (id) => {
   //   }
   //   console.log("Deleted")
 })
+
+const handleUpdateRequest = (id, data) => {
+  fetch(`http://localhost:8080/api/events/${id}`, {
+    method: "PUT",
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).then((response) => {
+    if(response.status === 200) {
+      getRequest()
+    }
+  })
+  .then((response) => {
+  if(!response.ok) {
+  throw new Error('Something went wrong')
+   }
+   console.log("Updated")
+})
+
+
+
+
+
+
+
+
+
 }
 
   useEffect(() => {getRequest()}, []);
