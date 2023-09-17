@@ -4,12 +4,14 @@ import React, { useState } from "react";
 
 function Icon() {
     const [isIconClicked, setIsIconClicked] = useState(false);
-    const [buttonColor, setButtonColor] = useState("#FFFFFF");
+    const [buttonColor, setButtonColor] = useState("#FFFFFF"); // FFFF is the color for white     
 
     const handleClick = () => {
         setIsIconClicked(!isIconClicked);
-        setButtonColor(isIconClicked ? "#FFFFFF" : "#ff0000");
-        console.log("Its a favorite!")
+        setButtonColor(isIconClicked ? "#FFFFFF" : "#ff0000"); //create state for the button to be off and on
+        console.log("Its a favorite!") // style can be changed to color, background color or whatever you want to change the icon to.
+        //the xmlns is the icon itself. I found it on fontawesome.com and just copied the entire link into the svg tag. and that was it!  
+        //Everthing in the <svg tag is from fontawesome.com and I just copied the entire link into the svg tag. and that was it! I hope this helps Janet!
     };
 
 return(
@@ -17,7 +19,7 @@ return(
     <div className="icon-view">
         
       
-     <svg  onClick={handleClick} style={{ backgroundColor: buttonColor }}   className= "icon" id="icon-id"  xmlns="http://www.w3.org/2000/svg" 
+     <svg  onClick={handleClick} style={{ fill: buttonColor }}   className= "icon" id="icon-id"  xmlns="http://www.w3.org/2000/svg" 
      height="25"
      width="25"
     viewBox="0 0 512 512">
